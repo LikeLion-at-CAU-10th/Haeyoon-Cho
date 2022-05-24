@@ -8,22 +8,22 @@
 * * *
 > 먼저 장고 서버를 구축하기 위해서, 가상환경을 맹글어야 한다!
 
-$ virtualenv myvenv : 'myvenv' 라는 이름의 가상환경을 생성하라
-$ source myvenv/bin/activate : 가상환경 켜는 명령어 
-$ django-admin startproject ~ : ~이라는 이름의 장고 프로젝트 생성
+* virtualenv myvenv : 'myvenv' 라는 이름의 가상환경을 생성하라
+* source myvenv/bin/activate : 가상환경 켜는 명령어 
+* django-admin startproject ~ : ~이라는 이름의 장고 프로젝트 생성
 
   (cd, ls 명령어 하고 나서 manage.py 확인하고 서버 켜야함이다..)
-$ python manage.py runserver : 서버 on > http://127.0.0.1:8000/ 출력되면 서버생성 완! 🙌
+* python manage.py runserver : 서버 on > http://127.0.0.1:8000/ 출력되면 서버생성 완! 🙌
 
 * * *
 > 장고 서버를 구축하자
 
-$ django-admin startapp footprint : footprint라는 app 생성. app은 프로젝트 하위에서 기능별로 구분하는 단위라고 한다.
+* django-admin startapp footprint : footprint라는 app 생성. app은 프로젝트 하위에서 기능별로 구분하는 단위라고 한다.
   (settings.py에 생성된 app을 등록해야 함이다!..)
 
 * ~ 폴더의 urls.py에 footprint app의 urls.py를 연결시킨다.
-$ from django.conf.urls import include
-$ path('foorprint/', include('footprint.urls')), (콤마찍어서 마무리하는게 특징)
+* from django.conf.urls import include
+  path('foorprint/', include('footprint.urls')), (콤마찍어서 마무리하는게 특징)
   코드는 외우지말고 구글링으로 찾아볼 것
 
 * footprint 폴더의 urls.py에 footprint views연결하고 footprint_GET, footprint_POST 함수 정의한다.
@@ -31,8 +31,8 @@ $ path('foorprint/', include('footprint.urls')), (콤마찍어서 마무리하�
 * footprint 폴더의 models.py에 Footprint Database 모델 정의한다.
 
 * 명령어 입력 :
- $ python manage.py makemigrations
- $ python manage.py migrate 
+  python manage.py makemigrations
+  python manage.py migrate 
 
 * settings.py에 가서 CRSF 보안처리 주석처리한다. 
 
