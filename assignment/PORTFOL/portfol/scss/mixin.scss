@@ -6,26 +6,18 @@
         @media only screen and (max-width: $tabletSize) {@content;}
     }
 
-    @else if $media == tablet {
-        @media only screen and (min-width: $tabletSize) and (max-width: $pcSize) {@content;}
-    }
-
     @else if $media == pc {
         @media only screen and (min-width: $pcSize) {@content;}
     }
 }
 
-.font {
+.copyright {
     @include respond-to(mobile) {
         font-size: 45px;
-        background-color: red;
-    }
-    @include respond-to(tablet) {
-        font-size: 60px;
-        background-color: orange;
+        background-color: blue;
     }
     @include respond-to(pc) {
-        font-size: 100px;
-        background-color: pink;
+        font-size: 210px;
+        background-color: green;
     }
 }
