@@ -1,0 +1,17 @@
+.like {
+  padding: 25px;
+  opacity: 75%;
+  background-color: gray;
+  position: absolute;
+  bottom: 1px;
+  color: white;
+}
+.App {
+  margin-top: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  position: relative;
+}
