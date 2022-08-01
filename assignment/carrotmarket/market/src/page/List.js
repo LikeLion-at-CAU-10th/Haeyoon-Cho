@@ -32,10 +32,10 @@ const Home = () => {
           <div
             className={out.product}
             onClick={() => {
-              navigateClick(`/${data.name}`, data.name);
+              navigateClick(`/${name}`, name);
             }}
           >
-            <img src={data.img} alt=""></img>
+            <img src={img} alt=""></img>
           </div>
         ))}
       </div>
@@ -44,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default List;
