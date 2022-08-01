@@ -9,6 +9,9 @@
 
 
 
+* 목서버 API 연결하는 법 
+![image](https://user-images.githubusercontent.com/101980010/182150358-c8bcd66f-0457-433d-a4a0-90920ff7c494.png)
+
 
 
 
