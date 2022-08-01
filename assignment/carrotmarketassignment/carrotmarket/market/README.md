@@ -7,6 +7,9 @@
 
 
 
++Postman으로 목서버 만드는 방법 공부하기
+![image](https://user-images.githubusercontent.com/101980010/182112971-91429d7a-d609-4946-8363-9cbc1f6ab1c4.png)
+
 
 
 
