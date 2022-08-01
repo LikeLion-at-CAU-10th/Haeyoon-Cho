@@ -25,6 +25,7 @@ const Home = () => {
 
   console.log(data);
 
+  
   return (
     <>
       <div className={out.products}>
@@ -36,6 +37,7 @@ const Home = () => {
             }}
           >
             <img src={img} alt=""></img>
+
           </div>
         ))}
       </div>
