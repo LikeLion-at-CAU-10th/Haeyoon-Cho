@@ -1,70 +1,31 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+세션 기반 인증
+=============
 
-## Available Scripts
+<hr/>
 
-In the project directory, you can run:
+쿠키와 세션은 HTTP 프로토콜의 특성이자 약점을 보완하기 위해서 사용한다. 
+HTTP 프로토콜 환경의 특성때문에 서버는 클라이언트가 누구인지 매번 확인해야한다.
+이 특성을 보완하기 위해 "쿠키, 세션"을 사용한다.
 
-### `yarn start`
+- 쿠키 vs 세션
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+>쿠키(cookie) : 사용자의 컴퓨터에 저장하는 작은 기록 정보 파일 ( ex_쿠키삭제 )      
+>세션(session) : 일정 시간 동안 브라우저로 들어오는 요구를 유지시키는 기술 ( ex_세션만료 )   
+>가장 큰 차이점은 사용자의 정보가 저장되는 위치이다. 쿠키는 서버의 자원을 전혀 사용하지 않으며, 세션은 서버의 자원을 사용한다.     
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### *single asterisks* 쿠키는 언제 쓰는가? 
+>session-id 값을 쿠키에 저장해서 사용          
+>구글, 유투브 검색 최적화나 추천 알고리즘            
+>~~cancelline~~ ( 인스타그램 돋보기도 마찬가지일까? )
 
-### `yarn test`
+### 왜 쿠키를 사용하는가?
+세션은 서버의 자원을 사용하기 때문에 무분별하게 만들다보면 속도가 느려질 수 있어 쿠키가 유리한 경우가 있다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+=> 세션 기반 인증 : 서버가 사용자가 로그인 중임을 기억하고 있는 로직
+* 로그인 하면 서버는 세션 저장소에 사용자 정보를 조회, 없으면 세션 id 발급
+* 발급된 id는 브라우저 쿠키에 저장
+* 클라이언트가 다른 요청 보낼 때마다 서버는 세션저장소에서 세션id로 조회 후 로그인 여부 결정
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+사용자 정보 확인할 수 있는 key = session-id : 쿠키에 저장돼 이동
